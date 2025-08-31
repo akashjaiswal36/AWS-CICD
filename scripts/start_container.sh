@@ -22,5 +22,9 @@ docker pull 178502900821.dkr.ecr.ap-south-1.amazonaws.com/simple-docker-service-
 docker ps -q --filter ancestor=178502900821.dkr.ecr.ap-south-1.amazonaws.com/simple-docker-service-0653d624ff7f:latest | xargs -r docker stop
 docker ps -a -q --filter ancestor=178502900821.dkr.ecr.ap-south-1.amazonaws.com/simple-docker-service-0653d624ff7f:latest | xargs -r docker rm
 
+#This stops and removes any container using port 5000.
+docker ps -q --filter "publish=5000" | xargs -r docker stop
+docker ps -a -q --filter "publish=5000" | xargs -r docker rm
+
 # Run the Docker image as a container
 docker run -d -p 5000:5000 178502900821.dkr.ecr.ap-south-1.amazonaws.com/simple-docker-service-0653d624ff7f:latest
