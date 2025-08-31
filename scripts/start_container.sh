@@ -4,6 +4,7 @@ set -e
 
 # From DockerHub
 
+
 # Pull the Docker image from Docker Hub
 # docker pull ajs3ra8/aws-sample-python-flask-app
 
