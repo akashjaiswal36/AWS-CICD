@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 set -e
 
 # From DockerHub
